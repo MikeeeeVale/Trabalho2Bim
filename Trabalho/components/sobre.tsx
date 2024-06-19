@@ -1,6 +1,7 @@
 import React from 'react';
-import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
+import {Text, View, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import Home from './home';
+import Imagem7 from './Img/Group1.png';
 
 export default function App() {
     const [page, setPage] = React.useState('sobre');
@@ -10,9 +11,11 @@ export default function App() {
             return (
                 <View style={styles.container}>
                     <Text style={styles.title}>Página Sobre</Text>
-                    <Text style={styles.title}>Exemplo 1</Text>
+                    <Image source={Imagem7} style={styles.img}/>
+                    <Text style={styles.texto}>Latitude: 0</Text>
+                    <Text style={styles.texto}>Longitude: 0</Text>
                     <TouchableOpacity style={styles.button} onPress={() => setPage('home')}>
-                        <Text style={styles.buttonText}>Clique aqui</Text>
+                        <Text style={styles.buttonText}>Obter Localização</Text>
                     </TouchableOpacity>
                 </View>
             );
@@ -25,26 +28,37 @@ export default function App() {
 }
 
 
+
 const styles = StyleSheet.create({
     container: {
         flex:1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor:'#fff',
+        backgroundColor:'#4D5E82',
     },
     title: {
-        fontSize:24,
+        fontSize:50,
         fontWeight: 'bold',
-        color: '#000',
+        color: '#ffff',
         marginBottom:20,
+    },
+    texto: {
+        fontSize:25,
+        fontWeight: 'bold',
+        color: '#ffff',
+        marginBottom:20,
+        padding: 25,
     },
     button: {
         backgroundColor:'#fff',
         padding:10,
         borderRadius:5,
+        shadowRadius:5,
+        
     },
     buttonText: {
-        color:'#fffffff',
+        color:'#4D5E82',
         fontSize:16,
+        fontWeight: 'bold',
     },
 });
