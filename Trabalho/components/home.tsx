@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, ImageBackground, StyleSheet, TouchableOpacity, Image} from 'react-native';
+import {Text, View, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import Sobre from './sobre';
 import Imagem1 from './Img/home.png';
 import Imagem2 from './Img/Group3.png';
@@ -14,14 +14,15 @@ export default function App() {
         if (page === 'home') {
             return (
                 <View style={styles.container}>
-                    <Image source={Imagem4} style={styles.img}/>
-                    <Image source={Imagem2} style={styles.img}/>
-                    <Text style={styles.texto}>Está perdido e não sabe o que fazer? Essa é a plataforma de localização em tempo real perfeita para você. Use o LocalizAI e nunca mais fique perdido!</Text>
-                    <Image source={Imagem1} style={styles.img}/>
+                    <Image source={Imagem4} />
+                    <Image source={Imagem2}/>
+                    <Text style={styles.texto}>Está perdido e não sabe o que fazer? Essa é a plataforma de 
+                    localização em tempo real perfeita para você. Use o LocalizAI e nunca mais fique perdido!</Text>
+                    <Image source={Imagem1} />
                     <TouchableOpacity style={styles.button} onPress={() => setPage('sobre')}>
                         <Text style={styles.buttonText}>Entrar</Text>
                     </TouchableOpacity>
-                    <Image source={Imagem3} style={styles.img}/>
+                    <Image source={Imagem3}/>
                 </View>
             );
         } else if (page === 'sobre'){
@@ -47,11 +48,11 @@ const styles = StyleSheet.create({
         marginBottom:20,
     },
     texto: {
-        fontSize:25,
+        fontSize:20,
         fontWeight: 'bold',
         color: '#ffff',
         marginBottom:20,
-        padding: 25,
+        padding: 45,
     },
     button: {
         backgroundColor:'#fff',
